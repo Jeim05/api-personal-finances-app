@@ -2,7 +2,7 @@ const express = require('express')
 const config = require('./config')
 const cors = require('cors')
 
-const clientes = require('./models/categorias/rutas')
+const categories = require('./models/categorias/rutas')
 
 const app = express()
 
@@ -17,7 +17,7 @@ app.use(cors({
 }))
 
 // Rutas
-app.use('/api/categorias', clientes)
+app.use('/api/categorias', categories)
 
 
 module.exports = app;

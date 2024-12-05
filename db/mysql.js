@@ -33,9 +33,9 @@ function connMysql(){
 
 connMysql();
 
-function todos(tabla){
+function getAll(table){
     return new Promise((resolve, reject) =>{
-        connection.query(`SELECT * FROM ${tabla}`, (error, result) =>{
+        connection.query(`SELECT * FROM ${table}`, (error, result) =>{
             if (error) {
                 return reject(error)
             }else resolve(result)
@@ -43,21 +43,21 @@ function todos(tabla){
     })
 }
 
-function uno(tabla, id){
+function getById(table, id){
 
 }
 
-function agregar(tabla, data){
+function add(table, data){
 
 }
 
-function eliminar(tabla, id){
+function remove(table, id){
 
 }
 
 module.exports = {
-    todos,
-    uno, 
-    agregar,
-    eliminar
+    getAll,
+    getById, 
+    add,
+    remove
 }

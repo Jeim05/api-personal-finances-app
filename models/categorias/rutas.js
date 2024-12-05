@@ -6,7 +6,7 @@ const controller = require('./controlador')
 const router = express.Router();
 
 router.get('/', function(req, res){
-    const todos = controller.todos()
+    const getCategories = controller.getCategories()
     .then((items)=>{
         response.success(req, res, items, 200)   
     })

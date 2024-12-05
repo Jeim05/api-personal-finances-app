@@ -1,10 +1,10 @@
 const db = require('../../db/mysql')
 const TABLA = 'categoria'
 
-function todos() {
-    return db.todos(TABLA)
+function getCategories() {
+    return db.getAll(TABLA)
 }
 
 module.exports = {
-    todos,
+    getCategories,
 }
