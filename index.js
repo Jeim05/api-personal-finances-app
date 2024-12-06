@@ -4,6 +4,7 @@ const cors = require('cors')
 const morgan = require('morgan')
 
 const categories = require('./models/categorias/rutas')
+const error = require('./red/errors')
 
 const app = express()
 
@@ -24,6 +25,7 @@ app.use(cors({
 
 // Rutas
 app.use('/api/categorias', categories)
+app.use(error)
 
 
 module.exports = app;
