@@ -1,10 +1,14 @@
 const express = require('express')
 const config = require('./config')
 const cors = require('cors')
+const morgan = require('morgan')
 
 const categories = require('./models/categorias/rutas')
 
 const app = express()
+
+// Middleware
+app.use(morgan('dev'))
 
 // Configuracion del puerto
 app.set('port', config.app.port);
