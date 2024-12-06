@@ -36,15 +36,17 @@ connMysql();
 function getAll(table){
     return new Promise((resolve, reject) =>{
         connection.query(`SELECT * FROM ${table}`, (error, result) =>{
-            if (error) {
-                return reject(error)
-            }else resolve(result)
+                return error ? reject(error) : resolve(result)
         })
     })
 }
 
 function getById(table, id){
-
+    return new Promise((resolve, reject) =>{
+        connection.query(`SELECT * FROM ${table} WHERE IdCategoria =${id}`, (error, result) =>{
+            return error ? reject(error) : resolve(result)
+        })
+    })
 }
 
 function add(table, data){
