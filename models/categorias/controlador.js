@@ -9,7 +9,17 @@ function getById(id){
     return db.getById(TABLA, id)
 }
 
+function addCategorie(){
+    return db.addCategorie(TABLA)
+}
+
+function deleteCategorie(body){
+    return db.deleteCategorie(TABLA, body)
+}
+
 module.exports = {
     getCategories,
     getById,
+    deleteCategorie,
+    addCategorie
 }

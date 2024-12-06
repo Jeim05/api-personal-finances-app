@@ -49,17 +49,21 @@ function getById(table, id){
     })
 }
 
-function add(table, data){
+/* function addCategorie(table, data){
 
-}
+} */
 
-function remove(table, id){
-
+function deleteCategorie(table, data){
+    return new Promise((resolve, reject) =>{
+        connection.query(`DELETE FROM ${table} WHERE IdCategoria = ?`, data.IdCategoria, (error, result) =>{
+            return error ? reject(error) : resolve(result)
+        })
+    })
 }
 
 module.exports = {
     getAll,
     getById, 
-    add,
-    remove
+    /* addCategorie, */
+    deleteCategorie
 }

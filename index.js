@@ -9,6 +9,8 @@ const app = express()
 
 // Middleware
 app.use(morgan('dev'))
+app.use(express.json())
+app.use(express.urlencoded({extended: true})) 
 
 // Configuracion del puerto
 app.set('port', config.app.port);
